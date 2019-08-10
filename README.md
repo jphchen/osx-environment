@@ -24,6 +24,16 @@ nvm install node
 ```
 brew install yarn
 ``` 
+- sdkman https://sdkman.io latest
+```
+curl -s "https://get.sdkman.io" | bash
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+- java sdk
+```
+sdk install java
+```
 
 # Environment
 ## ssh
