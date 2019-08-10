@@ -43,10 +43,24 @@ brew cask install android-ndk
 update env
 echo "export ANDROID_SDK_ROOT=/usr/local/share/android-sdk" >> ~/.profile
 echo "export ANDROID_NDK_HOME=/usr/local/share/android-ndk" >> ~/.profile
-
+echo "export PATH=$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/emulator:$PATH" >> ~/.profile
 touch ~/.android/repositories.cfg
+
+*************************************************************************
+For manual SDK, AVD, and project management, please use Android Studio.
+For command-line tools, use tools/bin/sdkmanager and tools/bin/avdmanager
+*************************************************************************
+
+https://developer.android.com/studio/command-line/sdkmanager
 sdkmanager --update
 sdkmanager "platform-tools" "platforms;android-28"
+sdkmanager --install "system-images;android-28;google_apis;x86"
+
+https://developer.android.com/studio/command-line/avdmanager
+avdmanager --verbose create avd --force --name "pixel_9.0" --device "pixel" --package "system-images;android-28;google_apis;x86" --tag "google_apis" --abi "x86"
+
+avdmanager list avd
+echo "alias pixel_9.0='emulator @pixel_9.0 -no-boot-anim -netdelay none -no-snapshot -wipe-data -skin 1080x1920 &'" >> ~/.profile
 ```
 
 # Environment
