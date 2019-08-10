@@ -34,6 +34,20 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
 sdk install java
 ```
+- android sdk
+```
+brew cask install android-studio
+brew cask install android-sdk
+brew cask install android-ndk
+
+update env
+echo "export ANDROID_SDK_ROOT=/usr/local/share/android-sdk" >> ~/.profile
+echo "export ANDROID_NDK_HOME=/usr/local/share/android-ndk" >> ~/.profile
+
+touch ~/.android/repositories.cfg
+sdkmanager --update
+sdkmanager "platform-tools" "platforms;android-28"
+```
 
 # Environment
 ## ssh
