@@ -41,9 +41,10 @@ brew cask install android-sdk
 brew cask install android-ndk
 
 update env
+echo "export ANDROID_HOME=/usr/local/share/android-sdk" >> ~/.profile
 echo "export ANDROID_SDK_ROOT=/usr/local/share/android-sdk" >> ~/.profile
 echo "export ANDROID_NDK_HOME=/usr/local/share/android-ndk" >> ~/.profile
-echo "export PATH=$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/emulator:$PATH" >> ~/.profile
+echo "export PATH=$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$PATH" >> ~/.profile
 touch ~/.android/repositories.cfg
 
 *************************************************************************
