@@ -58,10 +58,10 @@ sdkmanager "platform-tools" "platforms;android-28"
 sdkmanager --install "system-images;android-28;google_apis;x86"
 
 https://developer.android.com/studio/command-line/avdmanager
-avdmanager --verbose create avd --force --name "pixel_9.0" --device "pixel" --package "system-images;android-28;google_apis;x86" --tag "google_apis" --abi "x86"
+avdmanager --verbose create avd --force --name "emulator" --device "pixel" --package "system-images;android-28;google_apis;x86" --tag "google_apis" --abi "x86"
 
 avdmanager list avd
-echo "alias pixel_9.0='emulator @pixel_9.0 -no-boot-anim -netdelay none -no-snapshot -wipe-data -skin 1080x1920 &'" >> ~/.profile
+echo "alias pixel_9.0='emulator @emulator -no-boot-anim -netdelay none -no-snapshot -wipe-data -skin 1080x1920 &'" >> ~/.profile
 ```
 
 # Environment
